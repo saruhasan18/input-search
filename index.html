@@ -2,71 +2,119 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Search Anything</title>
   <style>
+    /* Background gradient and center everything */
     body {
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      display: flex;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       height: 100vh;
+      display: flex;
       justify-content: center;
       align-items: center;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
     }
 
     .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 50px;
+      border-radius: 15px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
       text-align: center;
+      width: 100%;
+      max-width: 450px;
+      backdrop-filter: blur(10px);
     }
 
     h1 {
+      margin-bottom: 30px;
+      font-weight: 700;
       font-size: 2.5rem;
-      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
     }
 
     form {
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
     }
 
     input[type="text"] {
-      padding: 10px;
-      width: 300px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      padding: 12px 15px;
+      font-size: 18px;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      outline: none;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 300px;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
+      box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.1);
+      font-weight: 500;
+    }
+
+    input[type="text"]:focus {
+      border-color: #76b852;
+      box-shadow: 0 0 10px #76b852;
+      background: #fff;
     }
 
     button {
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
-      font-size: 16px;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: 600;
+      background: #76b852;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
+      color: white;
       cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(118, 184, 82, 0.6);
     }
 
     button:hover {
-      background-color: #45a049;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(118, 184, 82, 0.9);
+      background: #5a8b3b;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+      input[type="text"] {
+        max-width: 180px;
+        font-size: 16px;
+      }
+      button {
+        padding: 12px 15px;
+        font-size: 16px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Search Anything</h1>
-    
-    <!-- Replace the action URL with your Formsubmit email setup -->
-    <form action="https://formsubmit.co/saruhasan1103@GMAIL.COM" method="POST">
+    <form action="https://formsubmit.co/saruhasan1103@gmail.com" method="POST">
       <input type="text" name="search" placeholder="Type your search..." required />
       <button type="submit">Submit</button>
 
       <!-- Optional settings -->
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="box">
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_template" value="box" />
     </form>
   </div>
 </body>
